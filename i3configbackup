@@ -29,11 +29,20 @@ font pango:monospace 8
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+
+
+#PROGRAM SHORTCUTS
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec termite
+#bindsym $mod+c exec
 
 # kill focused window
 bindsym $mod+Shift+q kill
+
+#Hide borders
+hide_edge_borders both
+
+
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
@@ -155,5 +164,19 @@ bar {
         status_command i3blocks
 }
 #start programs
-exec_always feh --bg-scale /home/holzel/Pictures/nature1.jpg
+exec_always feh --bg-scale /home/holzel/Pictures/cyber1.jpg
 exec_always setxkbmap -option compose:ralt
+exec_always xcompmgr
+
+
+
+#COLORS
+
+# class                 border  backgr. text    indicator child_border
+client.focused          #2dedff #2dedff #ff2d85 #2dedff   #2dedff
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+client.background       #ffffff

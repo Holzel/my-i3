@@ -45,7 +45,8 @@ hide_edge_borders both
 
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec rofi -show run
+#bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -83,6 +84,12 @@ bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
+
+
+#GAPS
+gaps inner 10
+gaps outer 0
+smart_gaps on
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -160,22 +167,22 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        status_command i3blocks
-}
+#bar {
+#        status_command i3blocks
+#}
 #start programs
-exec_always feh --bg-scale /home/holzel/Pictures/cyber1.jpg
-exec_always setxkbmap -option compose:ralt
-exec_always xcompmgr
-
-
-
+exec_always --no-startup-id feh --bg-scale /home/holzel/Pictures/cyber2.jpg
+exec_always --no-startup-id setxkbmap -option compose:ralt
+exec_always --no-startup-id xcompmgr
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh &
+exec_always --no-startup-id sudo netctl start HOME5F52
+exec_always --no-startup-id mpd
 #COLORS
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #2dedff #2dedff #ff2d85 #2dedff   #2dedff
+client.focused          #3f112a #3f112a #ff2d85 #2dedff   #3f112a
 client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
-client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.unfocused        #422132 #422132 #888888 #292d2e   #422132
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
